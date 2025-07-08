@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Shreyaskar</title>
+    <link rel="icon" type="png" href="p.png">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles for dusky black and white theme */
+        :root {
+            --primary-bg: #1a1a1a; /* Dusky Black */
+            --secondary-bg: #ffffff; /* White */
+            --primary-text: #ffffff; /* White */
+            --secondary-text: #1a1a1a; /* Dusky Black */
+            --accent-color: #a0a0a0; /* Light grey for subtle accents */
+            --name-highlight-color: #e0e0e0; /* Very light grey for name highlight, brought back */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            line-height: 1.6;
+        }
+
+        .section-bg-primary {
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+        }
+
+        .section-bg-secondary {
+            background-color: var(--secondary-bg);
+            color: var(--secondary-text);
+        }
+
+        .text-accent {
+            color: var(--accent-color);
+        }
+
+        /* Highlight color for the name (solid blue) */
+        .text-name-highlight {
+            color: #4a90e2; /* A vibrant blue color */
+            display: inline-block; /* Keep this for consistency with typing effect */
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-bg);
+            color: var(--secondary-text);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-text);
+        }
+
+        /* Responsive adjustments for image and text alignment */
+        @media (min-width: 768px) {
+            .hero-content {
+                flex-direction: row;
+                text-align: left;
+            }
+            .hero-text {
+                margin-right: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header/Navigation Section -->
+    <header class="section-bg-primary py-4 shadow-lg">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo/Name -->
+            <a href="#" class="text-2xl font-bold text-primary-text">Deep Shreyaskar</a>
+            <!-- Navigation Links (Hidden on small screens, shown on medium and up) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-accent-color transition-colors duration-300">Home</a>
+                <a href="#about" class="hover:text-accent-color transition-colors duration-300">About</a>
+                <a href="#music" class="hover:text-accent-color transition-colors duration-300">Music</a>
+                <a href="#ai-engineer" class="hover:text-accent-color transition-colors duration-300">AI Engineer</a>
+                <a href="#contact" class="hover:text-accent-color transition-colors duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger Icon) -->
+            <button id="mobile-menu-button" class="md:hidden text-primary-text focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden section-bg-primary py-2 px-4">
+            <a href="#home" class="block py-2 hover:text-accent-color transition-colors duration-300">Home</a>
+            <a href="#about" class="block py-2 hover:text-accent-color transition-colors duration-300">About</a>
+            <a href="#music" class="block py-2 hover:text-accent-color transition-colors duration-300">Music</a>
+            <a href="#ai-engineer" class="block py-2 hover:text-accent-color transition-colors duration-300">AI Engineer</a>
+            <a href="#contact" class="block py-2 hover:text-accent-color transition-colors duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="section-bg-primary min-h-screen flex items-center justify-center text-center py-16 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-center hero-content">
+            <!-- Hero Text Content -->
+            <div class="hero-text md:w-1/2 mb-8 md:mb-0 md:pr-8 text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                    Hello, I'm <span id="typed-name" class="text-name-highlight"></span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-6 text-accent">
+                    Guitarist • Musician • Singer • Songwriter • AI Engineer
+                </p>
+                <p class="text-lg mb-8 max-w-xl mx-auto md:mx-0">
+                    Blending the art of sound with the science of intelligence. Explore my journey through music and technology.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#music" class="btn-primary rounded-lg shadow-md hover:shadow-lg">
+                        Explore Music
+                    </a>
+                    <a href="#ai-engineer" class="btn-primary rounded-lg shadow-md hover:shadow-lg">
+                        See AI Projects
+                    </a>
+                </div>
+            </div>
+            <!-- Hero Image/Illustration -->
+            <div class="md:w-1/2 flex justify-center md:justify-end">
+                <!-- IMPORTANT: For deployment, ensure 'my.jpg' is in the same directory as this HTML file,
+                     or adjust the path (e.g., 'images/my.jpg' if in an 'images' subfolder). -->
+                <img src="my2.jpg" alt="Deep Shreyaskar's Photo" class="rounded-full shadow-lg border-4 border-accent-color w-64 h-64 md:w-80 md:h-80 object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-bg-secondary py-16 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">About Me</h2>
+            <div class="max-w-3xl mx-auto text-lg leading-relaxed text-secondary-text">
+                <p class="mb-4">
+                    I am a passionate individual who finds harmony in both melodies and algorithms. With years of dedication to the guitar, I've honed my skills as a musician, singer, and songwriter, crafting original pieces that resonate with emotion and storytelling.
+                </p>
+                <p class="mb-4">
+                    Simultaneously, my curiosity led me into the fascinating world of Artificial Intelligence. As an AI Engineer, I specialize in  machine learning, natural language processing, data science, developing innovative solutions that push the boundaries of technology.
+                </p>
+                <p>
+                    This portfolio is a testament to my dual passions, showcasing how creativity and analytical thinking can converge to create something truly unique.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="section-bg-primary py-16 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">My Music Journey</h2>
+            <p class="text-lg mb-12 max-w-3xl mx-auto text-accent">
+                From soulful melodies to intricate guitar solos, explore my work as a guitarist, musician, singer, and songwriter.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Music Card 1: Guitarist -->
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-guitar text-5xl mb-4 text-accent"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Guitarist</h3>
+                    <p class="text-gray-300 mb-4">
+                        Specializing in Bollywood Cover songs. Available for studio sessions, live performances, and collaborations.
+                    </p>
+                    <a href="https://www.instagram.com/1nne_9inne/reel/DLzgh7Wh4iq/" class="btn-primary text-sm">View Performances</a>
+                </div>
+
+                <!-- Music Card 2: Singer/Songwriter -->
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-microphone-alt text-5xl mb-4 text-accent"></i>
+                         <h3 class="text-2xl font-semibold mb-3">Singer & Songwriter</h3>
+                            <p class="text-gray-300 mb-4">
+                                Crafting original songs with heartfelt lyrics and captivating melodies. My voice tells stories.
+                            </p>
+                        <a href="#" class="btn-primary text-sm group inline-flex items-center justify-center">
+                            <span class="group-hover:hidden">Listen to original</span>
+                            <span class="hidden group-hover:inline">Coming Soon</span>
+                        </a>
+</div>
+
+                <!-- Music Card 3: Musician/Composer -->
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-music text-5xl mb-4 text-accent"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Musician & Composer</h3>
+                    <p class="text-gray-300 mb-4">
+                        Versatile in only one instruments and music production. Composing scores for creating new melodies.
+                    </p>
+                    <a href="#" class="btn-primary text-sm group inline-flex items-center justify-center">
+                        <span class="group-hover:hidden">See Compositions</span>
+                        <span class="hidden group-hover:inline">Coming Soon</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Optional: Link to a dedicated music page or Spotify/Bandcamp -->
+            <div class="mt-12">
+  <a href="#" class="btn-primary text-lg group inline-flex items-center justify-center space-x-2">
+    <!-- Icon wrapper (keeps space stable) -->
+    <span class="w-5 h-5 flex items-center justify-center">
+      <i class="fab fa-spotify group-hover:hidden"></i>
+    </span>
+
+    <!-- Text -->
+    <span class="group-hover:hidden">Listen on Spotify</span>
+    <span class="hidden group-hover:inline">Coming Soon...</span>
+  </a>
+</div>
+
+</div>
+
+            
+        </div>
+    </section>
+
+    <!-- AI Engineer Section -->
+    <section id="ai-engineer" class="section-bg-secondary py-16 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8 text-secondary-text">AI Engineering</h2>
+            <p class="text-lg mb-12 max-w-3xl mx-auto text-secondary-text">
+                Leveraging cutting-edge AI to solve complex problems and build intelligent systems.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI Project Card 1 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 transform hover:scale-105 transition-transform duration-300 border border-gray-200">
+                    <i class="fas fa-guitar text-5xl mb-4 text-secondary-text"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-secondary-text">Guitar Note Identifier</h3>
+                    <p class="text-gray-700 mb-4">
+                        Developed a  natural language processing model for Text Classification.
+                    </p>
+                    <a href="https://guitar-fretboard-6iob.vercel.app/" class="btn-primary text-sm">View Project</a>
+                </div>
+
+                <!-- AI Project 2 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 transform hover:scale-105 transition-transform duration-300 border border-gray-200">
+                    <i class="fas fa-robot text-5xl mb-4 text-secondary-text"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-secondary-text">ADIT Student Chatbot</h3>
+                    <p class="text-gray-700 mb-4">
+                        Designed and implemented Chatbot for the student of ADIT college using Django and NLP.
+                    </p>
+                    <a href="https://github.com/DeepShreyaskar1904/ADIT_Student_Chatbot/blob/main/Screenshot%202025-05-12%20014148.png" class="btn-primary text-sm">View Output</a>
+                </div>
+
+                <!-- AI Project 3 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 transform hover:scale-105 transition-transform duration-300 border border-gray-200">
+                    <i class="fas fa-code text-5xl mb-4 text-secondary-text"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-secondary-text">AI for Creative Arts</h3>
+                    <p class="text-gray-700 mb-4">
+                        Explored the intersection of AI and music generation/composition.
+                    </p>
+                    <a href="#" class="btn-primary text-sm group inline-flex items-center justify-center">
+                        <span class="group-hover:hidden">Learn more</span>
+                        <span class="hidden group-hover:inline">Coming Soon</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Optional: Link to GitHub or LinkedIn for more projects -->
+            <div class="mt-12">
+                <a href="https://github.com/DeepShreyaskar1904" class="btn-primary text-lg">
+                    <i class="fab fa-github mr-2"></i> View GitHub Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-bg-primary py-16 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto text-accent">
+                Whether for music collaborations, AI projects, or just to say hello, feel free to reach out!
+            </p>
+
+            <div class="flex flex-col items-center space-y-6">
+                <!-- Email -->
+                <div class="flex items-center text-xl">
+                    <i class="fas fa-envelope mr-3 text-accent"></i>
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfpsNKXhQsFHqZxSRFcZpRVksrvPJRKgLKnNPPjgLkmzXRLCmsZQRfcrdXWCvNCMDTBLKg" class="hover:underline">dshreyaskar@gmail.com</a>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div class="flex space-x-6 mt-8">
+                    <a href="https://www.instagram.com/1nne_9inne/"target="_blank" rel="noopener noreferrer" class="text-primary-text hover:text-accent-color transition-colors duration-300 text-4xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/deep.shreyaskar" target="_blank" rel="noopener noreferrer" class="text-primary-text hover:text-accent-color transition-colors duration-300 text-4xl">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.snapchat.com/add/deepshreyaskar" target="_blank" rel="noopener noreferrer" class="text-primary-text hover:text-accent-color transition-colors duration-300 text-4xl">
+                        <i class="fab fa-snapchat-ghost"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="section-bg-primary py-8 text-center text-gray-400 border-t border-gray-700">
+        <p>&copy; 2025 Deep Shreyaskar. All rights reserved.</p>
+        <p class="mt-2">Designed with passion and code.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle and Typing Effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Hide mobile menu after clicking a link
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Typing effect for the name
+            const nameElement = document.getElementById('typed-name');
+            const fullName = "Deep Shreyaskar";
+            let charIndex = 0;
+            const typingSpeed = 100; // milliseconds per character
+            const backspaceSpeed = 50; // milliseconds per character for backspacing
+            const pauseAfterType = 1500; // milliseconds to pause after typing
+            const pauseAfterBackspace = 500; // milliseconds to pause after backspacing
+
+            function typeWriter() {
+                if (charIndex < fullName.length) {
+                    nameElement.textContent += fullName.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, typingSpeed);
+                } else {
+                    // After typing, pause then start backspacing
+                    setTimeout(backspaceWriter, pauseAfterType);
+                }
+            }
+
+            function backspaceWriter() {
+                if (charIndex > 0) {
+                    nameElement.textContent = fullName.substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(backspaceWriter, backspaceSpeed);
+                } else {
+                    // After backspacing, pause then restart typing
+                    setTimeout(typeWriter, pauseAfterBackspace);
+                }
+            }
+
+            // Start the typing effect when the page loads
+            typeWriter();
+        });
+    </script>
+</body>
+</html>
