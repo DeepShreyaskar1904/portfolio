@@ -297,9 +297,10 @@
                     <a href="https://www.snapchat.com/add/deepshreyaskar" target="_blank" rel="noopener noreferrer" class="text-primary-text hover:text-accent-color transition-colors duration-300 text-4xl">
                         <i class="fab fa-snapchat-ghost"></i>
                     </a>
-                    <a href="linkedin://in/deepshreyaskar"  onclick="openLinkedIn()"  class="text-primary-text hover:text-accent-color transition-colors duration-300 text-4xl">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="#" onclick="openLinkedIn()" class="text-4xl hover:text-accent-color">
+                         <i class="fab fa-linkedin"></i>
                     </a>
+
                 </div>
             </div>
         </div>
@@ -382,17 +383,19 @@
       );
     }
   }
-  function openLinkedIn() {
-    const appLink = "https://www.linkedin.com/in/deep-shreyaskar-00009330b/";
-    const webLink = "https://www.linkedin.com/in/deepshreyaskar";
-    
-    // Try to open the app
-    window.location = appLink;
+   function openLinkedIn() {
+    const appLink = "linkedin://in/deep-shreyaskar-00009330b";
+    const webLink = "https://www.linkedin.com/in/deep-shreyaskar-00009330b/";
 
-    // Fallback to web after a short delay (if app is not installed)
-    setTimeout(() => {
-      window.open(webLink, "_blank");
-    }, 1000); // 1 second delay
+    // Try opening the app link
+    const timeout = setTimeout(() => {
+      window.location.href = webLink; // fallback to web if app not opened
+    }, 1500); // 1.5 seconds
+
+    window.location.href = appLink;
+
+    // Optional: clear timeout if needed (not always required)
+    // clearTimeout(timeout) if app is opened — hard to detect reliably
   }
         
     </script>
