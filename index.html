@@ -297,10 +297,9 @@
                     <a href="https://www.snapchat.com/add/deepshreyaskar" target="_blank" rel="noopener noreferrer" class="text-primary-text hover:text-accent-color transition-colors duration-300 text-4xl">
                         <i class="fab fa-snapchat-ghost"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/deep-shreyaskar-00009330b/" target="_blank" rel="noopener noreferrer" class="text-primary-text hover:text-accent-color transition-colors duration-300 text-4xl">
+                    <a href="linkedin://in/deepshreyaskar"  onclick="openLinkedIn()"  class="text-primary-text hover:text-accent-color transition-colors duration-300 text-4xl">
                         <i class="fab fa-linkedin"></i>
                     </a>
-
                 </div>
             </div>
         </div>
@@ -382,6 +381,18 @@
         "_blank"
       );
     }
+  }
+  function openLinkedIn() {
+    const appLink = "linkedin://in/deepshreyaskar";
+    const webLink = "https://www.linkedin.com/in/deepshreyaskar";
+    
+    // Try to open the app
+    window.location = appLink;
+
+    // Fallback to web after a short delay (if app is not installed)
+    setTimeout(() => {
+      window.open(webLink, "_blank");
+    }, 1000); // 1 second delay
   }
         
     </script>
