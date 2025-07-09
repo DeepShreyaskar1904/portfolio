@@ -280,18 +280,10 @@
 
             <div class="flex flex-col items-center space-y-6">
                 <!-- Email -->
-               <div class="flex flex-col gap-2">
-  <a 
-    href="mailto:dshreyaskar@gmail.com?subject=Portfolio Inquiry&body=Hi Deep,"
-    class="btn-primary"
-  >📩 Email via Mail App</a>
-
-  <a 
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=dshreyaskar@gmail.com&su=Portfolio Inquiry&body=Hi Deep,"
-    target="_blank" rel="noopener noreferrer"
-    class="btn-primary"
-  >📧 Email via Gmail Web</a>
-</div>
+                <div class="flex items-center text-xl">
+                    <i class="fas fa-envelope mr-3 text-accent"></i>
+                    <a href="#" onclick="openEmailLink()" class="hover:underline">dshreyaskar@gmail.com</a>
+                </div>
 
                 <!-- Social Media Icons -->
                 <div class="flex space-x-6 mt-8">
@@ -374,6 +366,19 @@
             // Start the typing effect when the page loads
             typeWriter();
         });
+        
+  function openEmailLink() {
+    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = "mailto:dshreyaskar@gmail.com";
+    } else {
+      window.open(
+        "https://mail.google.com/mail/?view=cm&fs=1&to=dshreyaskar@gmail.com&su=Portfolio Inquiry&body=Hi Deep,",
+        "_blank"
+      );
+    }
+  }
+        
     </script>
 </body>
 </html>
